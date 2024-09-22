@@ -36,7 +36,7 @@ public class TimeUI : MonoBehaviour
         float hourDegrees = 360f / 12f;
         float minuteDegrees = 360f / 60f;
         
-        hour.localEulerAngles = new Vector3(0,0,_startHourOffset - hourDegrees * _dateTime.Hour);
+        hour.localEulerAngles = new Vector3(0,0,_startHourOffset - (hourDegrees/60f) * (60 * _dateTime.Hour + _dateTime.Minute));
         minute.localEulerAngles = new Vector3(0,0,_startMinuteOffset - minuteDegrees * _dateTime.Minute);
         second.localEulerAngles = new Vector3(0,0,_startMinuteOffset - minuteDegrees * _dateTime.Second);
 
